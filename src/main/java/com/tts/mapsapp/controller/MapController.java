@@ -16,12 +16,14 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 @Slf4j
 public class MapController {
+    @Autowired
+    MapService mapService;
 
-    private MapService mapService;
+//    public MapController(MapService mapService) {
+//        this.mapService = mapService;
+//    }
 
-    public MapController(MapService mapService) {
-        this.mapService = mapService;
-    }
+    private Logger logger = LoggerFactory.getLogger(MapController.class);
 
     @GetMapping("/home")
     public String getDefaultMap(Model model) {

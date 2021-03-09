@@ -11,7 +11,7 @@ import org.springframework.web.client.RestTemplate;
 @Service
 public class MapServiceImpl implements MapService{
 
-    @Value("${google_api_key}")
+    @Value("${api_key}")
     private String apiKey;
 
     @Override
@@ -25,6 +25,5 @@ public class MapServiceImpl implements MapService{
 
         location.setLat(coordinates.getLat());
         location.setLng(coordinates.getLng());
-
     }
 }
